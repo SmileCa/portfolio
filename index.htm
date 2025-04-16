@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
     <title>Dmytro Hovenko | FullStack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
-    <meta name="description" content="Portfolio of Dmytro Hovenko, a FullStack Developer specializing in HTML, CSS, JavaScript, PHP, Laravel, C, C++, MySQL, and MSSQL.">
-    <meta name="keywords" content="Dmytro Hovenko, FullStack Developer, Web Development, HTML, CSS, JavaScript, PHP, Laravel, C, C++, MySQL, MSSQL">
+    <meta name="description" content="Portfolio of Dmytro Hovenko, a FullStack Developer specializing in HTML, CSS, JavaScript, JQuery, PHP, Laravel, C, C++, C#, MySQL, MSSQL, MongoDB. Focused on game servers, clients, and MMORPG projects (MuOnline, WoW, La2).">
+    <meta name="keywords" content="Dmytro Hovenko, FullStack Developer, Game Servers, MMORPG, MuOnline, WoW, La2, Web Development, HTML, CSS, JavaScript, JQuery, PHP, Laravel, C, C++, C#, MySQL, MSSQL, MongoDB">
 </head>
 <body>
     <!-- Loading screen -->
@@ -32,10 +32,13 @@
         </header>
 
         <!-- Welcome message -->
-        <h1 class="welcome-message">
-            Hi, I'm Dmytro Hovenko<br>
-            <span>FullStack Developer<br> Specializing in Modern Web and Software Solutions</span>
-        </h1>
+        <div style="position:relative;display:flex;justify-content:center;align-items:center;">
+            <div class="welcome-bg"></div>
+            <h1 class="welcome-message">
+                Hi, I'm Dmytro Hovenko<br>
+                <span>FullStack Developer<br> Specializing in Modern Web and Software Solutions</span>
+            </h1>
+        </div>
 
         <main>
             <!-- About Me section -->
@@ -48,7 +51,10 @@
                             I'm <strong>Dmytro Hovenko</strong>, an aspiring <strong>FullStack Developer</strong> currently learning the fundamentals of web development and programming. I am passionate about technology and eager to build a strong foundation in both front-end and back-end development.
                         </p>
                         <p>
-                            My learning journey includes <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>MySQL</strong>, and <strong>MSSQL</strong>. I am committed to continuous improvement and excited to apply my knowledge to real-world projects in the future.
+                            My learning journey includes <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong>, and <strong>MongoDB</strong>. I am committed to continuous improvement and excited to apply my knowledge to real-world projects in the future.
+                        </p>
+                        <p>
+                            <strong>My main focus is working exclusively with game servers, clients, and related projects.</strong> I am especially passionate about MMORPGs such as <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong>, and <strong>Lineage 2 (La2)</strong>. My goal is to contribute to the gaming industry and develop solutions for online game communities.
                         </p>
                     </div>
                 </div>
@@ -71,6 +77,10 @@
                                 <strong>Personal Projects</strong>
                                 <br>Creating small projects to practice and apply my knowledge, such as simple websites and basic applications.
                             </li>
+                            <li>
+                                <strong>Game Server Development</strong>
+                                <br>Focusing on game server, client, and MMORPG-related projects (MuOnline, WoW, La2).
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -84,10 +94,12 @@
                         <section>
                             <h4>Languages</h4>
                             <ul>
-                                <li><strong>C:</strong> Efficient system-level programming.</li>
-                                <li><strong>C++:</strong> Object-oriented programming and performance optimization.</li>
+                                <li><strong>C:</strong> Efficient system-level programming, often used in game server development.</li>
+                                <li><strong>C++:</strong> Object-oriented programming and performance optimization, suitable for game engines and clients.</li>
+                                <li><strong>C#:</strong> Application development with .NET technologies, including game tools and utilities.</li>
                                 <li><strong>PHP:</strong> Server-side scripting and RESTful APIs.</li>
                                 <li><strong>JavaScript:</strong> ES6+, DOM manipulation, and frameworks like ReactJS.</li>
+                                <li><strong>JQuery:</strong> Simplified JavaScript scripting and DOM manipulation.</li>
                             </ul>
                         </section>
                     </div>
@@ -105,8 +117,16 @@
                         <section>
                             <h4>Databases</h4>
                             <ul>
-                                <li><strong>MySQL:</strong> Relational database design and optimization.</li>
-                                <li><strong>MSSQL:</strong> Enterprise-level database solutions.</li>
+                                <li><strong>MySQL:</strong> Relational database design and optimization, commonly used in game server backends.</li>
+                                <li><strong>MSSQL:</strong> Enterprise-level database solutions, often used in MMORPG server infrastructure.</li>
+                                <li><strong>MongoDB:</strong> NoSQL database for flexible data storage.</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h4>Game Server Focus</h4>
+                            <ul>
+                                <li>Interested in MMORPG server and client development (MuOnline, WoW, La2).</li>
+                                <li>Experience with configuring, maintaining, and customizing game server environments.</li>
                             </ul>
                         </section>
                     </div>
@@ -117,32 +137,32 @@
             <section id="projects" class="projects-section">
                 <h2>My Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="1">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
                     </div>
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="2">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
                     </div>
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="3">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
                     </div>
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="4">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
                     </div>
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="5">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
                     </div>
-                    <div class="project-card placeholder-card">
+                    <div class="project-card placeholder-card" data-project="6">
                         <div class="project-image" style="background-color: #ffffff;"></div>
                         <h3>Project Coming Soon</h3>
                         <p>Details about this project will be added soon. Stay tuned!</p>
@@ -155,16 +175,70 @@
                 <h2>What People Say</h2>
                 <div class="reviews-grid">
                     <div class="review-card placeholder-review">
-                        <h3>Review Coming Soon</h3>
-                        <p>Feedback from clients and collaborators will be added here soon.</p>
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Great developer! Looking forward to seeing more of your MMORPG work.</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="alex-johnson">Alex Johnson</a>
+                            </span>
+                        </div>
                     </div>
                     <div class="review-card placeholder-review">
-                        <h3>Review Coming Soon</h3>
-                        <p>Feedback from clients and collaborators will be added here soon.</p>
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Very passionate about game servers. Highly recommended!</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="maria-lee">Maria Lee</a>
+                            </span>
+                        </div>
                     </div>
                     <div class="review-card placeholder-review">
-                        <h3>Review Coming Soon</h3>
-                        <p>Feedback from clients and collaborators will be added here soon.</p>
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Knows a lot about MuOnline and server configs. Good luck!</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="ivan-petrov">Ivan Petrov</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-card placeholder-review">
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Impressed by your dedication to learning and gaming projects.</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="sophie-muller">Sophie Müller</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-card placeholder-review">
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Great skills in both backend and game server development!</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="chen-wei">Chen Wei</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-card placeholder-review">
+                        <div class="review-avatar"></div>
+                        <div class="review-content">
+                            <span class="review-quote">Looking forward to your future MMORPG projects!</span>
+                        </div>
+                        <div class="reviewer-block">
+                            <span class="review-name">
+                                <a href="#" class="reviewer-link" data-reviewer="lucas-silva">Lucas Silva</a>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -210,6 +284,48 @@
             </div>
             <p>&copy; 2025 Dmytro Hovenko. All rights reserved.</p>
         </footer>
+    </div>
+    <!-- Project Popup -->
+    <div id="projectPopup" class="project-popup">
+        <div class="popup-content project-popup-flex">
+            <div class="project-popup-screenshot">
+                <!-- Screenshot placeholder -->
+                <div class="screenshot-placeholder">Screenshot<br>coming soon</div>
+            </div>
+            <div class="project-popup-info">
+                <span class="close-popup" id="closePopup">&times;</span>
+                <h2 id="popupTitle">Project Title</h2>
+                <div id="popupDetails">
+                    <p>Project details will appear here.</p>
+                    <ul class="project-meta">
+                        <li><strong>Genre:</strong> <span id="popupGenre">Coming soon</span></li>
+                        <li><strong>Short Info:</strong> <span id="popupShort">Coming soon</span></li>
+                    </ul>
+                </div>
+                <form id="commentForm">
+                    <h3>Leave a Comment</h3>
+                    <textarea id="commentText" placeholder="Your comment..." required></textarea>
+                    <button type="submit" class="info-button">Submit</button>
+                </form>
+                <div id="commentsSection">
+                    <h4>Comments</h4>
+                    <ul id="commentsList">
+                        <!-- No comments yet. -->
+                    </ul>
+                    <div id="noCommentsMsg" style="color:#888; font-size:15px; margin-top:6px; display:none;">No comments yet.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reviewer Profile Popup -->
+    <div id="reviewerProfilePopup" class="reviewer-profile-popup">
+        <div class="popup-content">
+            <span class="close-popup" id="closeReviewerPopup">&times;</span>
+            <h2 id="reviewerProfileName">Reviewer Name</h2>
+            <div id="reviewerProfileDetails">
+                <p>Profile details will appear here.</p>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
