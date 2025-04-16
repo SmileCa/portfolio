@@ -296,18 +296,10 @@ function unfreezeSize(el) {
 
 // Set language and update UI
 function setLanguage(lang) {
-    // Update active class on buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active-lang');
-        } else {
-            btn.classList.remove('active-lang');
-        }
+        btn.classList.toggle('active-lang', btn.getAttribute('data-lang') === lang);
     });
-
     const t = translations[lang] || translations['en'];
-
-    // Universal translation for all elements with data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key]) {
@@ -315,340 +307,139 @@ function setLanguage(lang) {
                 el.placeholder = t[key];
             } else {
                 freezeSize(el);
-                setTimeout(() => {
-                    el.innerHTML = t[key];
-                    unfreezeSize(el);
-                }, 100);
+                setTimeout(() => { el.innerHTML = t[key]; unfreezeSize(el); }, 100);
             }
         }
     });
-
-    // About section paragraphs
+    // About section
     const aboutPs = document.querySelectorAll('#about .about-text p');
-    if (aboutPs.length >= 3) {
-        [t.aboutText1, t.aboutText2, t.aboutText3].forEach((txt, i) => {
-            freezeSize(aboutPs[i]);
-            setTimeout(() => {
-                aboutPs[i].innerHTML = txt;
-                unfreezeSize(aboutPs[i]);
-            }, 100);
-        });
-    }
-
-    // Work experience section
+    if (aboutPs.length >= 3) [t.aboutText1, t.aboutText2, t.aboutText3].forEach((txt, i) => {
+        freezeSize(aboutPs[i]);
+        setTimeout(() => { aboutPs[i].innerHTML = txt; unfreezeSize(aboutPs[i]); }, 100);
+    });
+    // Work experience
     const workExpPs = document.querySelectorAll('#experience .about-text p');
     if (workExpPs.length >= 1) {
         freezeSize(workExpPs[0]);
-        setTimeout(() => {
-            workExpPs[0].innerHTML = t.workExpText1;
-            unfreezeSize(workExpPs[0]);
-        }, 100);
+        setTimeout(() => { workExpPs[0].innerHTML = t.workExpText1; unfreezeSize(workExpPs[0]); }, 100);
     }
     const workExpLis = document.querySelectorAll('#experience .about-text ul li');
-    if (workExpLis.length >= 3) {
-        [t.workExpList1, t.workExpList2, t.workExpList3].forEach((txt, i) => {
-            freezeSize(workExpLis[i]);
-            setTimeout(() => {
-                workExpLis[i].innerHTML = txt;
-                unfreezeSize(workExpLis[i]);
-            }, 100);
-        });
-    }
-
-    // Skills section
+    if (workExpLis.length >= 3) [t.workExpList1, t.workExpList2, t.workExpList3].forEach((txt, i) => {
+        freezeSize(workExpLis[i]);
+        setTimeout(() => { workExpLis[i].innerHTML = txt; unfreezeSize(workExpLis[i]); }, 100);
+    });
+    // Skills
     const skillsBoxes = document.querySelectorAll('.skills-box');
     if (skillsBoxes.length >= 2) {
-        // Programming
-        const progBox = skillsBoxes[0];
-        const progH3 = progBox.querySelector('h3');
-        freezeSize(progH3);
-        setTimeout(() => {
-            progH3.innerHTML = t.skillsProgramming;
-            unfreezeSize(progH3);
-        }, 100);
-
-        const progSections = progBox.querySelectorAll('.skills-resume section');
+        const progBox = skillsBoxes[0], progSections = progBox.querySelectorAll('.skills-resume section');
+        freezeSize(progBox.querySelector('h3'));
+        setTimeout(() => { progBox.querySelector('h3').innerHTML = t.skillsProgramming; unfreezeSize(progBox.querySelector('h3')); }, 100);
         if (progSections.length >= 2) {
-            const progH4 = progSections[0].querySelector('h4');
-            freezeSize(progH4);
+            const [progH4, spokenH4] = [progSections[0].querySelector('h4'), progSections[1].querySelector('h4')];
+            freezeSize(progH4); setTimeout(() => { progH4.innerHTML = t.skillsProgrammingTitle; unfreezeSize(progH4); }, 100);
+            freezeSize(progSections[0].querySelector('ul'));
             setTimeout(() => {
-                progH4.innerHTML = t.skillsProgrammingTitle;
-                unfreezeSize(progH4);
+                progSections[0].querySelector('ul').innerHTML = t.skillsProgrammingList.split('\n').map(s => `<li>${s}</li>`).join('');
+                unfreezeSize(progSections[0].querySelector('ul'));
             }, 100);
-
-            const progUl = progSections[0].querySelector('ul');
-            freezeSize(progUl);
+            freezeSize(spokenH4); setTimeout(() => { spokenH4.innerHTML = t.skillsSpoken; unfreezeSize(spokenH4); }, 100);
+            freezeSize(progSections[1].querySelector('ul'));
             setTimeout(() => {
-                progUl.innerHTML = t.skillsProgrammingList.split('\n').map(s => `<li>${s}</li>`).join('');
-                unfreezeSize(progUl);
+                progSections[1].querySelector('ul').innerHTML = t.skillsSpokenList.split('\n').map(s => `<li>${s}</li>`).join('');
+                unfreezeSize(progSections[1].querySelector('ul'));
             }, 100);
-
-            const spokenH4 = progSections[1].querySelector('h4');
-            freezeSize(spokenH4);
-            setTimeout(() => {
-                spokenH4.innerHTML = t.skillsSpoken;
-                unfreezeSize(spokenH4);
-            }, 100);
-
-            const spokenUl = progSections[1].querySelector('ul');
-            freezeSize(spokenUl);
-            setTimeout(() => {
-                spokenUl.innerHTML = t.skillsSpokenList.split('\n').map(s => `<li>${s}</li>`).join('');
-                unfreezeSize(spokenUl);
-            }, 100);
-
             const spokenP = progSections[1].querySelector('p');
-            if (spokenP) {
-                freezeSize(spokenP);
-                setTimeout(() => {
-                    spokenP.innerHTML = t.skillsSpokenPref;
-                    unfreezeSize(spokenP);
-                }, 100);
-            }
+            if (spokenP) { freezeSize(spokenP); setTimeout(() => { spokenP.innerHTML = t.skillsSpokenPref; unfreezeSize(spokenP); }, 100); }
         }
-        // Technologies
-        const techBox = skillsBoxes[1];
-        const techH3 = techBox.querySelector('h3');
-        freezeSize(techH3);
-        setTimeout(() => {
-            techH3.innerHTML = t.skillsTechnologies;
-            unfreezeSize(techH3);
-        }, 100);
-
-        const techSections = techBox.querySelectorAll('.skills-resume section');
+        const techBox = skillsBoxes[1], techSections = techBox.querySelectorAll('.skills-resume section');
+        freezeSize(techBox.querySelector('h3'));
+        setTimeout(() => { techBox.querySelector('h3').innerHTML = t.skillsTechnologies; unfreezeSize(techBox.querySelector('h3')); }, 100);
         if (techSections.length >= 3) {
-            const fwH4 = techSections[0].querySelector('h4');
-            freezeSize(fwH4);
+            const [fwH4, dbH4, gsH4] = [techSections[0].querySelector('h4'), techSections[1].querySelector('h4'), techSections[2].querySelector('h4')];
+            freezeSize(fwH4); setTimeout(() => { fwH4.innerHTML = t.skillsFrameworks; unfreezeSize(fwH4); }, 100);
+            freezeSize(techSections[0].querySelector('ul'));
             setTimeout(() => {
-                fwH4.innerHTML = t.skillsFrameworks;
-                unfreezeSize(fwH4);
+                techSections[0].querySelector('ul').innerHTML = t.skillsFrameworksList.split('\n').map(s => `<li>${s}</li>`).join('');
+                unfreezeSize(techSections[0].querySelector('ul'));
             }, 100);
-
-            const fwUl = techSections[0].querySelector('ul');
-            freezeSize(fwUl);
+            freezeSize(dbH4); setTimeout(() => { dbH4.innerHTML = t.skillsDatabases; unfreezeSize(dbH4); }, 100);
+            freezeSize(techSections[1].querySelector('ul'));
             setTimeout(() => {
-                fwUl.innerHTML = t.skillsFrameworksList.split('\n').map(s => `<li>${s}</li>`).join('');
-                unfreezeSize(fwUl);
+                techSections[1].querySelector('ul').innerHTML = t.skillsDatabasesList.split('\n').map(s => `<li>${s}</li>`).join('');
+                unfreezeSize(techSections[1].querySelector('ul'));
             }, 100);
-
-            const dbH4 = techSections[1].querySelector('h4');
-            freezeSize(dbH4);
+            freezeSize(gsH4); setTimeout(() => { gsH4.innerHTML = t.skillsGameServer; unfreezeSize(gsH4); }, 100);
+            freezeSize(techSections[2].querySelector('ul'));
             setTimeout(() => {
-                dbH4.innerHTML = t.skillsDatabases;
-                unfreezeSize(dbH4);
-            }, 100);
-
-            const dbUl = techSections[1].querySelector('ul');
-            freezeSize(dbUl);
-            setTimeout(() => {
-                dbUl.innerHTML = t.skillsDatabasesList.split('\n').map(s => `<li>${s}</li>`).join('');
-                unfreezeSize(dbUl);
-            }, 100);
-
-            const gsH4 = techSections[2].querySelector('h4');
-            freezeSize(gsH4);
-            setTimeout(() => {
-                gsH4.innerHTML = t.skillsGameServer;
-                unfreezeSize(gsH4);
-            }, 100);
-
-            const gsUl = techSections[2].querySelector('ul');
-            freezeSize(gsUl);
-            setTimeout(() => {
-                gsUl.innerHTML = t.skillsGameServerList.split('\n').map(s => `<li>${s}</li>`).join('');
-                unfreezeSize(gsUl);
+                techSections[2].querySelector('ul').innerHTML = t.skillsGameServerList.split('\n').map(s => `<li>${s}</li>`).join('');
+                unfreezeSize(techSections[2].querySelector('ul'));
             }, 100);
         }
     }
-
-    // Projects section
+    // Projects
     const projectsSection = document.querySelector('#projects.projects-section');
     if (projectsSection) {
         const h2 = projectsSection.querySelector('h2');
-        if (h2) {
-            freezeSize(h2);
-            setTimeout(() => {
-                h2.innerHTML = t.myProjects;
-                unfreezeSize(h2);
-            }, 100);
-        }
-        const cards = projectsSection.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            const h3 = card.querySelector('h3');
-            const p = card.querySelector('p');
-            if (h3) {
-                freezeSize(h3);
-                setTimeout(() => {
-                    h3.innerHTML = t.projectSoon;
-                    unfreezeSize(h3);
-                }, 100);
-            }
-            if (p) {
-                freezeSize(p);
-                setTimeout(() => {
-                    p.innerHTML = t.projectSoonDetails;
-                    unfreezeSize(p);
-                }, 100);
-            }
+        if (h2) { freezeSize(h2); setTimeout(() => { h2.innerHTML = t.myProjects; unfreezeSize(h2); }, 100); }
+        projectsSection.querySelectorAll('.project-card').forEach(card => {
+            const h3 = card.querySelector('h3'), p = card.querySelector('p');
+            if (h3) { freezeSize(h3); setTimeout(() => { h3.innerHTML = t.projectSoon; unfreezeSize(h3); }, 100); }
+            if (p) { freezeSize(p); setTimeout(() => { p.innerHTML = t.projectSoonDetails; unfreezeSize(p); }, 100); }
         });
     }
-
-    // Reviews section
+    // Reviews
     const reviewsSection = document.querySelector('#reviews.reviews-section');
     if (reviewsSection) {
         const h2 = reviewsSection.querySelector('h2');
-        if (h2) {
-            freezeSize(h2);
-            setTimeout(() => {
-                h2.innerHTML = t.whatPeopleSay;
-                unfreezeSize(h2);
-            }, 100);
-        }
+        if (h2) { freezeSize(h2); setTimeout(() => { h2.innerHTML = t.whatPeopleSay; unfreezeSize(h2); }, 100); }
         const quotes = reviewsSection.querySelectorAll('.review-quote');
-        [
-            t.review1, t.review2, t.review3, t.review4, t.review5, t.review6
-        ].forEach((txt, i) => {
-            if (quotes[i]) {
-                freezeSize(quotes[i]);
-                setTimeout(() => {
-                    quotes[i].innerHTML = txt;
-                    unfreezeSize(quotes[i]);
-                }, 100);
-            }
+        [t.review1, t.review2, t.review3, t.review4, t.review5, t.review6].forEach((txt, i) => {
+            if (quotes[i]) { freezeSize(quotes[i]); setTimeout(() => { quotes[i].innerHTML = txt; unfreezeSize(quotes[i]); }, 100); }
         });
     }
-
-    // Contact section
+    // Contact
     const contactBox = document.querySelector('.info-box:nth-child(1)');
     if (contactBox) {
-        const h3 = contactBox.querySelector('h3');
-        if (h3) {
-            freezeSize(h3);
-            setTimeout(() => {
-                h3.innerHTML = t.contactMe;
-                unfreezeSize(h3);
-            }, 100);
-        }
-        const p = contactBox.querySelector('p');
-        if (p) {
-            freezeSize(p);
-            setTimeout(() => {
-                p.innerHTML = t.contactMsg;
-                unfreezeSize(p);
-            }, 100);
-        }
-        const btn = contactBox.querySelector('.info-button');
-        if (btn) {
-            freezeSize(btn);
-            setTimeout(() => {
-                btn.innerHTML = t.emailMe;
-                unfreezeSize(btn);
-            }, 100);
-        }
+        const h3 = contactBox.querySelector('h3'), p = contactBox.querySelector('p'), btn = contactBox.querySelector('.info-button');
+        if (h3) { freezeSize(h3); setTimeout(() => { h3.innerHTML = t.contactMe; unfreezeSize(h3); }, 100); }
+        if (p) { freezeSize(p); setTimeout(() => { p.innerHTML = t.contactMsg; unfreezeSize(p); }, 100); }
+        if (btn) { freezeSize(btn); setTimeout(() => { btn.innerHTML = t.emailMe; unfreezeSize(btn); }, 100); }
     }
     const resumeBox = document.querySelector('.info-box:nth-child(2)');
     if (resumeBox) {
-        const h3 = resumeBox.querySelector('h3');
-        if (h3) {
-            freezeSize(h3);
-            setTimeout(() => {
-                h3.innerHTML = t.downloadResume;
-                unfreezeSize(h3);
-            }, 100);
-        }
-        const p = resumeBox.querySelector('p');
-        if (p) {
-            freezeSize(p);
-            setTimeout(() => {
-                p.innerHTML = t.resumeText;
-                unfreezeSize(p);
-            }, 100);
-        }
-        const btn = resumeBox.querySelector('.info-button');
-        if (btn) {
-            freezeSize(btn);
-            setTimeout(() => {
-                btn.innerHTML = t.downloadResumeBtn;
-                unfreezeSize(btn);
-            }, 100);
-        }
+        const h3 = resumeBox.querySelector('h3'), p = resumeBox.querySelector('p'), btn = resumeBox.querySelector('.info-button');
+        if (h3) { freezeSize(h3); setTimeout(() => { h3.innerHTML = t.downloadResume; unfreezeSize(h3); }, 100); }
+        if (p) { freezeSize(p); setTimeout(() => { p.innerHTML = t.resumeText; unfreezeSize(p); }, 100); }
+        if (btn) { freezeSize(btn); setTimeout(() => { btn.innerHTML = t.downloadResumeBtn; unfreezeSize(btn); }, 100); }
     }
-
     // Project popup
     const popupTitle = document.getElementById('popupTitle');
-    if (popupTitle) {
-        freezeSize(popupTitle);
-        setTimeout(() => {
-            popupTitle.innerHTML = t.projectSoon;
-            unfreezeSize(popupTitle);
-        }, 100);
-    }
+    if (popupTitle) { freezeSize(popupTitle); setTimeout(() => { popupTitle.innerHTML = t.projectSoon; unfreezeSize(popupTitle); }, 100); }
     const popupDetails = document.getElementById('popupDetails');
     if (popupDetails) {
         const p = popupDetails.querySelector('p');
-        if (p) {
-            freezeSize(p);
-            setTimeout(() => {
-                p.innerHTML = t.projectSoonDetails;
-                unfreezeSize(p);
-            }, 100);
-        }
-        // genre/short info left as is
+        if (p) { freezeSize(p); setTimeout(() => { p.innerHTML = t.projectSoonDetails; unfreezeSize(p); }, 100); }
     }
-
-    // --- Popup: Comments, Submit, No Comments, etc. ---
-    // Comment form in popup
+    // Popup: Comments, Submit, No Comments
     const commentForm = document.getElementById('commentForm');
     if (commentForm) {
-        const h3 = commentForm.querySelector('h3');
-        if (h3) {
-            freezeSize(h3);
-            setTimeout(() => {
-                h3.innerHTML = t.leaveComment;
-                unfreezeSize(h3);
-            }, 100);
-        }
-        const textarea = commentForm.querySelector('textarea');
+        const h3 = commentForm.querySelector('h3'), textarea = commentForm.querySelector('textarea'), btn = commentForm.querySelector('button');
+        if (h3) { freezeSize(h3); setTimeout(() => { h3.innerHTML = t.leaveComment; unfreezeSize(h3); }, 100); }
         if (textarea) textarea.placeholder = t.leaveComment;
-        const btn = commentForm.querySelector('button');
-        if (btn) {
-            freezeSize(btn);
-            setTimeout(() => {
-                btn.innerHTML = t.submit;
-                unfreezeSize(btn);
-            }, 100);
-        }
+        if (btn) { freezeSize(btn); setTimeout(() => { btn.innerHTML = t.submit; unfreezeSize(btn); }, 100); }
     }
-    // Comments section in popup
     const commentsSection = document.getElementById('commentsSection');
     if (commentsSection) {
-        const h4 = commentsSection.querySelector('h4');
-        if (h4) {
-            freezeSize(h4);
-            setTimeout(() => {
-                h4.innerHTML = t.comments;
-                unfreezeSize(h4);
-            }, 100);
-        }
-        const noCommentsMsg = document.getElementById('noCommentsMsg');
-        if (noCommentsMsg) {
-            freezeSize(noCommentsMsg);
-            setTimeout(() => {
-                noCommentsMsg.innerHTML = t.noComments;
-                unfreezeSize(noCommentsMsg);
-            }, 100);
-        }
+        const h4 = commentsSection.querySelector('h4'), noCommentsMsg = document.getElementById('noCommentsMsg');
+        if (h4) { freezeSize(h4); setTimeout(() => { h4.innerHTML = t.comments; unfreezeSize(h4); }, 100); }
+        if (noCommentsMsg) { freezeSize(noCommentsMsg); setTimeout(() => { noCommentsMsg.innerHTML = t.noComments; unfreezeSize(noCommentsMsg); }, 100); }
     }
-
     // Footer links
     const navKeys = ['about', 'skills', 'projects', 'reviews', 'contacts'];
     document.querySelectorAll('.footer-links li a').forEach((a, i) => {
         if (navKeys[i] && t[navKeys[i]]) {
             freezeSize(a);
-            setTimeout(() => {
-                a.textContent = t[navKeys[i]];
-                unfreezeSize(a);
-            }, 100);
+            setTimeout(() => { a.textContent = t[navKeys[i]]; unfreezeSize(a); }, 100);
         }
     });
 }

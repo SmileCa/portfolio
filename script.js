@@ -1,4 +1,4 @@
-// Simplified smooth scrolling
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
         e.preventDefault();
@@ -6,12 +6,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Unified DOMContentLoaded and load events
+// DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.menu ul');
-    document.addEventListener('click', e => {
-        if (!menu.contains(e.target)) menu.classList.remove('open');
-    });
+    document.addEventListener('click', e => { if (!menu.contains(e.target)) menu.classList.remove('open'); });
 
     const loadingScreen = document.getElementById('loadingScreen');
     window.addEventListener('load', () => {
@@ -19,56 +17,82 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => loadingScreen?.remove(), 1000);
     });
 
-    // Постепенная загрузка секций (по одной с задержкой)
+    // Sequential section fade-in
     const sections = Array.from(document.querySelectorAll('section'));
     sections.forEach(section => section.classList.add('hidden'));
-    function showSectionSequentially(index = 0) {
-        if (index >= sections.length) return;
-        sections[index].classList.add('visible');
-        setTimeout(() => showSectionSequentially(index + 1), 250); // задержка между секциями
-    }
-    showSectionSequentially();
+    (function showSectionSequentially(i = 0) {
+        if (i >= sections.length) return;
+        sections[i].classList.add('visible');
+        setTimeout(() => showSectionSequentially(i + 1), 250);
+    })();
 
-    // Открытие popup по клику на карточку проекта
+    // Project popup
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', e => {
-            // Не открывать popup, если клик по вложенной кнопке (на случай будущих изменений)
             if (e.target.closest('button')) return;
-            const projectId = card.getAttribute('data-project');
-            openProjectPopup(projectId);
+            openProjectPopup(card.getAttribute('data-project'));
         });
     });
-
-    // Popup close
     document.getElementById('closePopup').onclick = closeProjectPopup;
     document.getElementById('projectPopup').addEventListener('click', e => {
         if (e.target === e.currentTarget) closeProjectPopup();
     });
+    document.addEventListener('keydown', e => { if (e.key === "Escape") closeProjectPopup(); });
 
-    // Optional: close popup on Esc
-    document.addEventListener('keydown', e => {
-        if (e.key === "Escape") closeProjectPopup();
-    });
-
-    // Reviewer profile popup open
+    // Reviewer profile popup
     document.querySelectorAll('.reviewer-link').forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
-            const reviewerId = link.getAttribute('data-reviewer');
-            openReviewerProfile(reviewerId);
+            openReviewerProfile(link.getAttribute('data-reviewer'));
         });
     });
-
-    // Reviewer profile popup close
     document.getElementById('closeReviewerPopup').onclick = closeReviewerProfile;
     document.getElementById('reviewerProfilePopup').addEventListener('click', e => {
         if (e.target === e.currentTarget) closeReviewerProfile();
     });
-
-    document.addEventListener('keydown', e => {
-        if (e.key === "Escape") closeReviewerProfile();
-    });
+    document.addEventListener('keydown', e => { if (e.key === "Escape") closeReviewerProfile(); });
 });
+
+// Visitor Counter
+(function () {
+    function getKey(type) {
+        const now = new Date();
+        if (type === 'day') return `visitors_day_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+        if (type === 'week') {
+            const firstJan = new Date(now.getFullYear(), 0, 1);
+            const days = Math.floor((now - firstJan) / 86400000);
+            const week = Math.ceil((days + firstJan.getDay() + 1) / 7);
+            return `visitors_week_${now.getFullYear()}_${week}`;
+        }
+        return `visitors_month_${now.getFullYear()}_${now.getMonth() + 1}`;
+    }
+    let visitorId = localStorage.getItem('visitor_id');
+    if (!visitorId) {
+        visitorId = Math.random().toString(36).substr(2, 12) + Date.now();
+        localStorage.setItem('visitor_id', visitorId);
+    }
+    function updateVisitorSet(key) {
+        let set = [];
+        try { set = JSON.parse(localStorage.getItem(key)) || []; } catch {}
+        if (!set.includes(visitorId)) {
+            set.push(visitorId);
+            localStorage.setItem(key, JSON.stringify(set));
+        }
+        return set.length;
+    }
+    const dayCount = updateVisitorSet(getKey('day'));
+    const weekCount = updateVisitorSet(getKey('week'));
+    const monthCount = updateVisitorSet(getKey('month'));
+    window.addEventListener('DOMContentLoaded', () => {
+        let el = document.getElementById('visitorStats');
+        if (el) {
+            el.innerHTML = `<span style="font-weight:600;">Visitors:</span>
+                <span title="Unique visitors today">${dayCount} today</span> &middot;
+                <span title="Unique visitors this week">${weekCount} week</span> &middot;
+                <span title="Unique visitors this month">${monthCount} month</span>`;
+        }
+    });
+})();
 
 // --- Project Popup Logic ---
 const projectData = {
@@ -110,11 +134,7 @@ const projectData = {
     }
 };
 
-// Get current language from lang.js (reactive)
-function getCurrentLang() {
-    // Always get the latest value from window.currentLang
-    return window.currentLang || 'en';
-}
+function getCurrentLang() { return window.currentLang || 'en'; }
 
 function openProjectPopup(projectId) {
     const popup = document.getElementById('projectPopup');
@@ -127,47 +147,33 @@ function openProjectPopup(projectId) {
     const commentForm = document.getElementById('commentForm');
     const commentText = document.getElementById('commentText');
     let commentName = document.getElementById('commentName');
+    const lang = getCurrentLang();
 
-    // Добавляем поле для имени, если его нет
     if (!commentName) {
         commentName = document.createElement('input');
         commentName.type = 'text';
         commentName.id = 'commentName';
-        // Перевод плейсхолдера
-        const lang = getCurrentLang();
         commentName.placeholder = {
-            en: 'Your name (optional)',
-            ru: 'Ваше имя (необязательно)',
-            pl: 'Twoje imię (opcjonalnie)',
-            ua: "Ваше ім'я (необов'язково)"
+            en: 'Your name (optional)', ru: 'Ваше имя (необязательно)', pl: 'Twoje imię (opcjonalnie)', ua: "Ваше ім'я (необов'язково)"
         }[lang] || 'Your name (optional)';
         commentName.className = 'comment-name-input';
         commentForm.insertBefore(commentName, commentText);
     } else {
-        // Обновить плейсхолдер при смене языка
-        const lang = getCurrentLang();
         commentName.placeholder = {
-            en: 'Your name (optional)',
-            ru: 'Ваше имя (необязательно)',
-            pl: 'Twoje imię (opcjonalnie)',
-            ua: "Ваше ім'я (необов'язково)"
+            en: 'Your name (optional)', ru: 'Ваше имя (необязательно)', pl: 'Twoje imię (opcjonalnie)', ua: "Ваше ім'я (необов'язково)"
         }[lang] || 'Your name (optional)';
     }
 
-    // Set project info with translation
-    const lang = getCurrentLang();
     const data = projectData[projectId] || {};
     title.textContent = (data.title && data.title[lang]) || (data.title && data.title['en']) || "Project";
     details.querySelector('p').textContent = (data.details && data.details[lang]) || (data.details && data.details['en']) || "";
     genre.textContent = (data.genre && data.genre[lang]) || (data.genre && data.genre['en']) || "Coming soon";
     short.textContent = (data.short && data.short[lang]) || (data.short && data.short['en']) || "Coming soon";
 
-    // Load comments from localStorage
+    // Comments
     const commentsKey = `project_comments_${projectId}`;
     let comments = [];
-    try {
-        comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
-    } catch {}
+    try { comments = JSON.parse(localStorage.getItem(commentsKey)) || []; } catch {}
     commentsList.innerHTML = "";
     if (comments.length === 0) {
         noCommentsMsg.style.display = "block";
@@ -175,52 +181,39 @@ function openProjectPopup(projectId) {
         noCommentsMsg.style.display = "none";
         comments.forEach(c => {
             const li = document.createElement('li');
-            li.innerHTML = `
-                <div class="comment-header">
+            li.innerHTML = `<div class="comment-header">
                     <span class="comment-author">${c.name ? c.name : "Anonymous"}</span>
                     <span class="comment-date">${c.date ? c.date : ""}</span>
                 </div>
-                <div class="comment-text">${c.text}</div>
-            `;
+                <div class="comment-text">${c.text}</div>`;
             commentsList.appendChild(li);
         });
     }
-
-    // Handle comment submit
     commentForm.onsubmit = function(e) {
         e.preventDefault();
         const text = commentText.value.trim();
         const nameVal = commentName.value.trim();
         if (text) {
-            const commentObj = {
-                text,
-                name: nameVal,
-                date: new Date().toLocaleString()
-            };
+            const commentObj = { text, name: nameVal, date: new Date().toLocaleString() };
             comments.push(commentObj);
             localStorage.setItem(commentsKey, JSON.stringify(comments));
             const li = document.createElement('li');
-            li.innerHTML = `
-                <div class="comment-header">
+            li.innerHTML = `<div class="comment-header">
                     <span class="comment-author">${commentObj.name ? commentObj.name : "Anonymous"}</span>
                     <span class="comment-date">${commentObj.date}</span>
                 </div>
-                <div class="comment-text">${commentObj.text}</div>
-            `;
+                <div class="comment-text">${commentObj.text}</div>`;
             commentsList.appendChild(li);
             commentText.value = "";
             commentName.value = "";
             noCommentsMsg.style.display = "none";
         }
     };
-
     popup.classList.add('active');
     document.body.classList.add('popup-open');
 }
-
 function closeProjectPopup() {
-    const popup = document.getElementById('projectPopup');
-    popup.classList.remove('active');
+    document.getElementById('projectPopup').classList.remove('active');
     document.body.classList.remove('popup-open');
 }
 
@@ -301,8 +294,7 @@ function openReviewerProfile(reviewerId) {
     const lang = getCurrentLang();
     const profile = reviewerProfiles[reviewerId];
     if (profile) {
-        details.innerHTML = `
-            <div class="reviewer-profile-info">
+        details.innerHTML = `<div class="reviewer-profile-info">
                 <div class="review-avatar"></div>
                 <div>
                     <div class="reviewer-profile-position"><strong>${{
@@ -313,8 +305,7 @@ function openReviewerProfile(reviewerId) {
                     }[lang] || "Project:"}</strong> ${profile.project[lang] || profile.project['en']}</div>
                 </div>
             </div>
-            <p>${profile.details[lang] || profile.details['en']}</p>
-        `;
+            <p>${profile.details[lang] || profile.details['en']}</p>`;
         name.textContent = profile.name[lang] || profile.name['en'];
     } else {
         details.innerHTML = `<p>${{
@@ -324,30 +315,22 @@ function openReviewerProfile(reviewerId) {
             ua: "Немає інформації про профіль."
         }[lang] || "No profile information available."}</p>`;
         name.textContent = {
-            en: "Reviewer",
-            ru: "Рецензент",
-            pl: "Recenzent",
-            ua: "Рецензент"
+            en: "Reviewer", ru: "Рецензент", pl: "Recenzent", ua: "Рецензент"
         }[lang] || "Reviewer";
     }
     popup.classList.add('active');
     document.body.classList.add('popup-open');
 }
-
 function closeReviewerProfile() {
-    const popup = document.getElementById('reviewerProfilePopup');
-    popup.classList.remove('active');
+    document.getElementById('reviewerProfilePopup').classList.remove('active');
     document.body.classList.remove('popup-open');
 }
 
 // --- Language change observer for popups ---
 (function () {
-    // Helper to get the current open projectId (if any)
     function getOpenProjectId() {
-        // Try to find the last opened project-card (by data-project) that matches the popup content
         const popup = document.getElementById('projectPopup');
         if (!popup || !popup.classList.contains('active')) return null;
-        // Try to find the projectId from the popup title by matching with projectData
         const title = document.getElementById('popupTitle');
         if (!title) return null;
         const lang = getCurrentLang();
@@ -356,13 +339,10 @@ function closeReviewerProfile() {
                 return id;
             }
         }
-        // Fallback: try to find the first .project-card.active or .project-card[data-project]
         const card = document.querySelector('.project-card.active[data-project]') ||
             document.querySelector('.project-card[data-project]');
         return card ? card.getAttribute('data-project') : null;
     }
-
-    // Helper to get the open reviewerId (if any)
     function getOpenReviewerId() {
         const popup = document.getElementById('reviewerProfilePopup');
         if (!popup || !popup.classList.contains('active')) return null;
@@ -376,16 +356,12 @@ function closeReviewerProfile() {
         }
         return null;
     }
-
-    // Listen for language changes and update popups if open
     let lastLang = getCurrentLang();
     setInterval(() => {
         if (window.currentLang !== lastLang) {
             lastLang = window.currentLang;
-            // Update project popup if open
             const projectId = getOpenProjectId();
             if (projectId) openProjectPopup(projectId);
-            // Update reviewer popup if open
             const reviewerId = getOpenReviewerId();
             if (reviewerId) openReviewerProfile(reviewerId);
         }

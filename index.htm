@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
     <title>Dmytro Hovenko | FullStack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/png">
     <meta name="description" content="Portfolio of Dmytro Hovenko, a FullStack Developer specializing in HTML, CSS, JavaScript, JQuery, PHP, Laravel, C, C++, C#, MySQL, MSSQL, MongoDB. Focused on game servers, clients, and MMORPG projects (MuOnline, WoW, La2).">
     <meta name="keywords" content="Dmytro Hovenko, FullStack Developer, Game Servers, MMORPG, MuOnline, WoW, La2, Web Development, HTML, CSS, JavaScript, JQuery, PHP, Laravel, C, C++, C#, MySQL, MSSQL, MongoDB">
 </head>
 <body>
-    <!-- Loading screen -->
     <div id="loadingScreen" class="loading-screen">
         <div class="spinner"></div>
     </div>
     <div class="container">
-        <!-- Header section -->
         <header class="header">
             <div class="logo">
                 <img src="images/logo.png" alt="Web Development Logo" width="40" height="40">
             </div>
-            <!-- Language Switcher Start -->
             <div class="language-switcher">
                 <button class="lang-btn" data-lang="en" title="English">
                     <img src="https://flagcdn.com/24x18/gb.png" alt="English" width="24" height="18">
@@ -35,7 +33,6 @@
                     <img src="https://flagcdn.com/24x18/ua.png" alt="Українська" width="24" height="18">
                 </button>
             </div>
-            <!-- Language Switcher End -->
             <nav class="menu">
                 <ul>
                     <li><a href="#about" data-i18n="about">About Me</a></li>
@@ -46,7 +43,6 @@
                 </ul>
             </nav>
         </header>
-        <!-- Welcome message -->
         <div style="position:relative;display:flex;justify-content:center;align-items:center;">
             <div class="welcome-bg"></div>
             <h1 class="welcome-message">
@@ -55,7 +51,6 @@
             </h1>
         </div>
         <main>
-            <!-- About Me section -->
             <section id="about" class="about-section">
                 <h2 data-i18n="about">About Me</h2>
                 <div class="about-content">
@@ -73,7 +68,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Work Experience section -->
             <section id="experience" class="about-section">
                 <h2 data-i18n="workExp">Work Experience</h2>
                 <div class="about-content">
@@ -98,7 +92,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Skills section -->
             <section id="skills" class="skills-container">
                 <aside id="skills-programming" class="skills-box">
                     <h3 data-i18n="skillsProgramming">Programming Languages</h3>
@@ -205,7 +198,6 @@
                     </div>
                 </aside>
             </section>
-            <!-- Projects section -->
             <section id="projects" class="projects-section">
                 <h2 data-i18n="myProjects">My Projects</h2>
                 <div class="projects-grid">
@@ -241,7 +233,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Reviews section -->
             <section id="reviews" class="reviews-section">
                 <h2 data-i18n="whatPeopleSay">What People Say</h2>
                 <div class="reviews-grid">
@@ -313,7 +304,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Contact form -->
             <section id="contact" class="flex-container">
                 <section class="info-box">
                     <h3 data-i18n="contactMe">Contact Me</h3>
@@ -327,8 +317,6 @@
                 </section>
             </section>
         </main>
-
-        <!-- Footer section -->
         <footer class="footer">
             <ul class="footer-links">
                 <li><a href="#about" data-i18n="about">About Me</a></li>
@@ -354,11 +342,9 @@
             <p>&copy; 2025 Dmytro Hovenko. All rights reserved.</p>
         </footer>
     </div>
-    <!-- Project Popup -->
     <div id="projectPopup" class="project-popup">
         <div class="popup-content project-popup-flex">
             <div class="project-popup-screenshot">
-                <!-- Screenshot placeholder -->
                 <div class="screenshot-placeholder">Screenshot<br>coming soon</div>
             </div>
             <div class="project-popup-info">
@@ -378,15 +364,12 @@
                 </form>
                 <div id="commentsSection">
                     <h4 data-i18n="comments">Comments</h4>
-                    <ul id="commentsList">
-                        <!-- No comments yet. -->
-                    </ul>
+                    <ul id="commentsList"></ul>
                     <div id="noCommentsMsg" data-i18n="noComments" style="color:#888; font-size:15px; margin-top:6px; display:none;">No comments yet.</div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Reviewer Profile Popup -->
     <div id="reviewerProfilePopup" class="reviewer-profile-popup">
         <div class="popup-content">
             <span class="close-popup" id="closeReviewerPopup">&times;</span>
@@ -396,7 +379,41 @@
             </div>
         </div>
     </div>
+    <div class="visitor-stats-footer" id="visitorStats"></div>
     <script src="script.js"></script>
     <script src="lang.js"></script>
+    <style>
+        .visitor-stats {
+            margin: 18px auto 0 auto;
+            padding: 8px 18px;
+            background: #f7f7fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #0001;
+            color: #333;
+            font-size: 15px;
+            text-align: center;
+            max-width: 320px;
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 600px) {
+            .visitor-stats { font-size: 13px; padding: 6px 8px; max-width: 98vw; }
+        }
+        .visitor-stats-footer {
+            margin: 10px auto 0 auto;
+            padding: 4px 0 10px 0;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            color: #888;
+            font-size: 13px;
+            text-align: center;
+            max-width: 340px;
+            letter-spacing: 0.01em;
+            border: none;
+        }
+        @media (max-width: 600px) {
+            .visitor-stats-footer { font-size: 12px; padding: 2px 0 8px 0; max-width: 98vw; }
+        }
+    </style>
 </body>
 </html>
