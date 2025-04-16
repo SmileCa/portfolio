@@ -73,42 +73,48 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Project Popup Logic ---
 const projectData = {
     1: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     },
     2: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     },
     3: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     },
     4: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     },
     5: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     },
     6: {
-        title: "Project Coming Soon",
-        details: "Details about this project will be added soon. Stay tuned!",
-        genre: "Coming soon",
-        short: "Short info will be available soon."
+        title: { en: "Project Coming Soon", ru: "Проект скоро появится", pl: "Projekt wkrótce", ua: "Проєкт скоро з'явиться" },
+        details: { en: "Details about this project will be added soon. Stay tuned!", ru: "Информация о проекте будет добавлена позже. Следите за обновлениями!", pl: "Szczegóły projektu pojawią się wkrótce. Bądź na bieżąco!", ua: "Інформацію про проєкт буде додано пізніше. Слідкуйте за оновленнями!" },
+        genre: { en: "Coming soon", ru: "Скоро", pl: "Wkrótce", ua: "Скоро" },
+        short: { en: "Short info will be available soon.", ru: "Краткая информация появится позже.", pl: "Krótka informacja pojawi się wkrótce.", ua: "Коротка інформація з'явиться пізніше." }
     }
 };
+
+// Get current language from lang.js (reactive)
+function getCurrentLang() {
+    // Always get the latest value from window.currentLang
+    return window.currentLang || 'en';
+}
 
 function openProjectPopup(projectId) {
     const popup = document.getElementById('projectPopup');
@@ -127,17 +133,34 @@ function openProjectPopup(projectId) {
         commentName = document.createElement('input');
         commentName.type = 'text';
         commentName.id = 'commentName';
-        commentName.placeholder = 'Your name (optional)';
+        // Перевод плейсхолдера
+        const lang = getCurrentLang();
+        commentName.placeholder = {
+            en: 'Your name (optional)',
+            ru: 'Ваше имя (необязательно)',
+            pl: 'Twoje imię (opcjonalnie)',
+            ua: "Ваше ім'я (необов'язково)"
+        }[lang] || 'Your name (optional)';
         commentName.className = 'comment-name-input';
         commentForm.insertBefore(commentName, commentText);
+    } else {
+        // Обновить плейсхолдер при смене языка
+        const lang = getCurrentLang();
+        commentName.placeholder = {
+            en: 'Your name (optional)',
+            ru: 'Ваше имя (необязательно)',
+            pl: 'Twoje imię (opcjonalnie)',
+            ua: "Ваше ім'я (необов'язково)"
+        }[lang] || 'Your name (optional)';
     }
 
-    // Set project info
+    // Set project info with translation
+    const lang = getCurrentLang();
     const data = projectData[projectId] || {};
-    title.textContent = data.title || "Project";
-    details.querySelector('p').textContent = data.details || "";
-    genre.textContent = data.genre || "Coming soon";
-    short.textContent = data.short || "Coming soon";
+    title.textContent = (data.title && data.title[lang]) || (data.title && data.title['en']) || "Project";
+    details.querySelector('p').textContent = (data.details && data.details[lang]) || (data.details && data.details['en']) || "";
+    genre.textContent = (data.genre && data.genre[lang]) || (data.genre && data.genre['en']) || "Coming soon";
+    short.textContent = (data.short && data.short[lang]) || (data.short && data.short['en']) || "Coming soon";
 
     // Load comments from localStorage
     const commentsKey = `project_comments_${projectId}`;
@@ -204,46 +227,70 @@ function closeProjectPopup() {
 // --- Reviewer Profile Logic ---
 const reviewerProfiles = {
     "alex-johnson": {
-        name: "Alex Johnson",
-        photo: "",
-        position: "Game Developer",
-        project: "MuOnline Server Suite",
-        details: "Game developer and MMORPG enthusiast. Loves MuOnline and server-side coding."
+        name: { en: "Alex Johnson", ru: "Алекс Джонсон", pl: "Alex Johnson", ua: "Алекс Джонсон" },
+        position: { en: "Game Developer", ru: "Разработчик игр", pl: "Twórca gier", ua: "Розробник ігор" },
+        project: { en: "MuOnline Server Suite", ru: "MuOnline Server Suite", pl: "MuOnline Server Suite", ua: "MuOnline Server Suite" },
+        details: {
+            en: "Game developer and MMORPG enthusiast. Loves MuOnline and server-side coding.",
+            ru: "Разработчик игр и энтузиаст MMORPG. Любит MuOnline и серверное программирование.",
+            pl: "Twórca gier i fan MMORPG. Uwielbia MuOnline i kodowanie po stronie serwera.",
+            ua: "Розробник ігор і ентузіаст MMORPG. Любить MuOnline і серверне програмування."
+        }
     },
     "maria-lee": {
-        name: "Maria Lee",
-        photo: "",
-        position: "Web Developer",
-        project: "Game Server Dashboard",
-        details: "Web developer and gamer. Enjoys working with server infrastructure."
+        name: { en: "Maria Lee", ru: "Мария Ли", pl: "Maria Lee", ua: "Марія Лі" },
+        position: { en: "Web Developer", ru: "Веб-разработчик", pl: "Web Developer", ua: "Веб-розробник" },
+        project: { en: "Game Server Dashboard", ru: "Game Server Dashboard", pl: "Game Server Dashboard", ua: "Game Server Dashboard" },
+        details: {
+            en: "Web developer and gamer. Enjoys working with server infrastructure.",
+            ru: "Веб-разработчик и геймер. Любит работать с серверной инфраструктурой.",
+            pl: "Web developer i gracz. Lubi pracować z infrastrukturą serwerową.",
+            ua: "Веб-розробник і геймер. Любить працювати з серверною інфраструктурою."
+        }
     },
     "ivan-petrov": {
-        name: "Ivan Petrov",
-        photo: "",
-        position: "Community Moderator",
-        project: "MuOnline Configurator",
-        details: "MMORPG community moderator. Specializes in MuOnline server configs."
+        name: { en: "Ivan Petrov", ru: "Иван Петров", pl: "Ivan Petrov", ua: "Іван Петров" },
+        position: { en: "Community Moderator", ru: "Модератор сообщества", pl: "Moderator społeczności", ua: "Модератор спільноти" },
+        project: { en: "MuOnline Configurator", ru: "MuOnline Configurator", pl: "MuOnline Configurator", ua: "MuOnline Configurator" },
+        details: {
+            en: "MMORPG community moderator. Specializes in MuOnline server configs.",
+            ru: "Модератор MMORPG-сообщества. Специалист по настройке серверов MuOnline.",
+            pl: "Moderator społeczności MMORPG. Specjalizuje się w konfiguracji serwerów MuOnline.",
+            ua: "Модератор MMORPG-спільноти. Спеціалізується на налаштуванні серверів MuOnline."
+        }
     },
     "sophie-muller": {
-        name: "Sophie Müller",
-        photo: "",
-        position: "Backend Developer",
-        project: "MMORPG API Gateway",
-        details: "Backend developer and gaming project contributor."
+        name: { en: "Sophie Müller", ru: "Софи Мюллер", pl: "Sophie Müller", ua: "Софі Мюллер" },
+        position: { en: "Backend Developer", ru: "Бэкенд-разработчик", pl: "Backend Developer", ua: "Бекенд-розробник" },
+        project: { en: "MMORPG API Gateway", ru: "MMORPG API Gateway", pl: "MMORPG API Gateway", ua: "MMORPG API Gateway" },
+        details: {
+            en: "Backend developer and gaming project contributor.",
+            ru: "Бэкенд-разработчик и участник игровых проектов.",
+            pl: "Backend developer i współtwórca projektów gamingowych.",
+            ua: "Бекенд-розробник і учасник ігрових проектів."
+        }
     },
     "chen-wei": {
-        name: "Chen Wei",
-        photo: "",
-        position: "Database Specialist",
-        project: "Game Data Platform",
-        details: "Database expert and game server backend specialist."
+        name: { en: "Chen Wei", ru: "Чен Вэй", pl: "Chen Wei", ua: "Чен Вей" },
+        position: { en: "Database Specialist", ru: "Специалист по базам данных", pl: "Specjalista ds. baz danych", ua: "Фахівець з баз даних" },
+        project: { en: "Game Data Platform", ru: "Game Data Platform", pl: "Game Data Platform", ua: "Game Data Platform" },
+        details: {
+            en: "Database expert and game server backend specialist.",
+            ru: "Эксперт по базам данных и бэкенду игровых серверов.",
+            pl: "Ekspert od baz danych i backendu serwerów gier.",
+            ua: "Експерт з баз даних і бекенду ігрових серверів."
+        }
     },
     "lucas-silva": {
-        name: "Lucas Silva",
-        photo: "",
-        position: "Aspiring Game Developer",
-        project: "MMORPG Fan Portal",
-        details: "MMORPG fan and aspiring game developer."
+        name: { en: "Lucas Silva", ru: "Лукас Силва", pl: "Lucas Silva", ua: "Лукас Сілва" },
+        position: { en: "Aspiring Game Developer", ru: "Начинающий разработчик игр", pl: "Początkujący twórca gier", ua: "Початківець розробник ігор" },
+        project: { en: "MMORPG Fan Portal", ru: "MMORPG Fan Portal", pl: "MMORPG Fan Portal", ua: "MMORPG Fan Portal" },
+        details: {
+            en: "MMORPG fan and aspiring game developer.",
+            ru: "Фанат MMORPG и начинающий разработчик игр.",
+            pl: "Fan MMORPG i początkujący twórca gier.",
+            ua: "Фанат MMORPG і початківець розробник ігор."
+        }
     }
 };
 
@@ -251,22 +298,37 @@ function openReviewerProfile(reviewerId) {
     const popup = document.getElementById('reviewerProfilePopup');
     const name = document.getElementById('reviewerProfileName');
     const details = document.getElementById('reviewerProfileDetails');
+    const lang = getCurrentLang();
     const profile = reviewerProfiles[reviewerId];
     if (profile) {
         details.innerHTML = `
             <div class="reviewer-profile-info">
                 <div class="review-avatar"></div>
                 <div>
-                    <div class="reviewer-profile-position"><strong>Position:</strong> ${profile.position}</div>
-                    <div class="reviewer-profile-project"><strong>Project:</strong> ${profile.project}</div>
+                    <div class="reviewer-profile-position"><strong>${{
+                        en: "Position:", ru: "Должность:", pl: "Stanowisko:", ua: "Посада:"
+                    }[lang] || "Position:"}</strong> ${profile.position[lang] || profile.position['en']}</div>
+                    <div class="reviewer-profile-project"><strong>${{
+                        en: "Project:", ru: "Проект:", pl: "Projekt:", ua: "Проєкт:"
+                    }[lang] || "Project:"}</strong> ${profile.project[lang] || profile.project['en']}</div>
                 </div>
             </div>
-            <p>${profile.details}</p>
+            <p>${profile.details[lang] || profile.details['en']}</p>
         `;
-        name.textContent = profile.name;
+        name.textContent = profile.name[lang] || profile.name['en'];
     } else {
-        details.innerHTML = `<p>No profile information available.</p>`;
-        name.textContent = "Reviewer";
+        details.innerHTML = `<p>${{
+            en: "No profile information available.",
+            ru: "Нет информации о профиле.",
+            pl: "Brak informacji o profilu.",
+            ua: "Немає інформації про профіль."
+        }[lang] || "No profile information available."}</p>`;
+        name.textContent = {
+            en: "Reviewer",
+            ru: "Рецензент",
+            pl: "Recenzent",
+            ua: "Рецензент"
+        }[lang] || "Reviewer";
     }
     popup.classList.add('active');
     document.body.classList.add('popup-open');
@@ -277,3 +339,55 @@ function closeReviewerProfile() {
     popup.classList.remove('active');
     document.body.classList.remove('popup-open');
 }
+
+// --- Language change observer for popups ---
+(function () {
+    // Helper to get the current open projectId (if any)
+    function getOpenProjectId() {
+        // Try to find the last opened project-card (by data-project) that matches the popup content
+        const popup = document.getElementById('projectPopup');
+        if (!popup || !popup.classList.contains('active')) return null;
+        // Try to find the projectId from the popup title by matching with projectData
+        const title = document.getElementById('popupTitle');
+        if (!title) return null;
+        const lang = getCurrentLang();
+        for (const [id, data] of Object.entries(projectData)) {
+            if ((data.title && (data.title[lang] === title.textContent || data.title['en'] === title.textContent))) {
+                return id;
+            }
+        }
+        // Fallback: try to find the first .project-card.active or .project-card[data-project]
+        const card = document.querySelector('.project-card.active[data-project]') ||
+            document.querySelector('.project-card[data-project]');
+        return card ? card.getAttribute('data-project') : null;
+    }
+
+    // Helper to get the open reviewerId (if any)
+    function getOpenReviewerId() {
+        const popup = document.getElementById('reviewerProfilePopup');
+        if (!popup || !popup.classList.contains('active')) return null;
+        const name = document.getElementById('reviewerProfileName');
+        if (!name) return null;
+        const lang = getCurrentLang();
+        for (const [id, profile] of Object.entries(reviewerProfiles)) {
+            if (profile.name[lang] === name.textContent || profile.name['en'] === name.textContent) {
+                return id;
+            }
+        }
+        return null;
+    }
+
+    // Listen for language changes and update popups if open
+    let lastLang = getCurrentLang();
+    setInterval(() => {
+        if (window.currentLang !== lastLang) {
+            lastLang = window.currentLang;
+            // Update project popup if open
+            const projectId = getOpenProjectId();
+            if (projectId) openProjectPopup(projectId);
+            // Update reviewer popup if open
+            const reviewerId = getOpenReviewerId();
+            if (reviewerId) openReviewerProfile(reviewerId);
+        }
+    }, 200);
+})();

@@ -20,64 +20,77 @@
             <div class="logo">
                 <img src="images/logo.png" alt="Web Development Logo" width="40" height="40">
             </div>
+            <!-- Language Switcher Start -->
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en" title="English">
+                    <img src="https://flagcdn.com/24x18/gb.png" alt="English" width="24" height="18">
+                </button>
+                <button class="lang-btn" data-lang="ru" title="Русский">
+                    <img src="https://flagcdn.com/24x18/ru.png" alt="Русский" width="24" height="18">
+                </button>
+                <button class="lang-btn" data-lang="pl" title="Polski">
+                    <img src="https://flagcdn.com/24x18/pl.png" alt="Polski" width="24" height="18">
+                </button>
+                <button class="lang-btn" data-lang="ua" title="Українська">
+                    <img src="https://flagcdn.com/24x18/ua.png" alt="Українська" width="24" height="18">
+                </button>
+            </div>
+            <!-- Language Switcher End -->
             <nav class="menu">
                 <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contacts</a></li>
+                    <li><a href="#about" data-i18n="about">About Me</a></li>
+                    <li><a href="#skills" data-i18n="skills">Skills</a></li>
+                    <li><a href="#projects" data-i18n="projects">Projects</a></li>
+                    <li><a href="#reviews" data-i18n="reviews">Reviews</a></li>
+                    <li><a href="#contact" data-i18n="contacts">Contacts</a></li>
                 </ul>
             </nav>
         </header>
-
         <!-- Welcome message -->
         <div style="position:relative;display:flex;justify-content:center;align-items:center;">
             <div class="welcome-bg"></div>
             <h1 class="welcome-message">
-                Hi, I'm Dmytro Hovenko<br>
-                <span>FullStack Developer<br> Specializing in Modern Web and Software Solutions</span>
+                <span data-i18n="welcome">Hi, I'm Dmytro Hovenko</span><br>
+                <span data-i18n="welcomeSub">FullStack Developer<br> Specializing in Modern Web and Software Solutions</span>
             </h1>
         </div>
-
         <main>
             <!-- About Me section -->
             <section id="about" class="about-section">
-                <h2>About Me</h2>
+                <h2 data-i18n="about">About Me</h2>
                 <div class="about-content">
                     <img src="images/photo.jpg" alt="Dmytro Hovenko" class="about-photo">
                     <div class="about-text">
-                        <p>
+                        <p data-i18n="aboutText1">
                             I'm <strong>Dmytro Hovenko</strong>, an aspiring <strong>FullStack Developer</strong> currently learning the fundamentals of web development and programming. I am passionate about technology and eager to build a strong foundation in both front-end and back-end development.
                         </p>
-                        <p>
+                        <p data-i18n="aboutText2">
                             My learning journey includes <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong>, and <strong>MongoDB</strong>. I am committed to continuous improvement and excited to apply my knowledge to real-world projects in the future.
                         </p>
-                        <p>
+                        <p data-i18n="aboutText3">
                             <strong>My main focus is working exclusively with game servers, clients, and related projects.</strong> I am especially passionate about MMORPGs such as <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong>, and <strong>Lineage 2 (La2)</strong>. My goal is to contribute to the gaming industry and develop solutions for online game communities.
                         </p>
                     </div>
                 </div>
             </section>
-
             <!-- Work Experience section -->
             <section id="experience" class="about-section">
-                <h2>Work Experience</h2>
+                <h2 data-i18n="workExp">Work Experience</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>
+                        <p data-i18n="workExpText1">
                             As someone just starting out, I am focused on learning and building my skills. While I don't have professional experience yet, I am actively working on personal projects and exploring various technologies to gain hands-on experience.
                         </p>
                         <ul>
-                            <li>
+                            <li data-i18n="workExpList1">
                                 <strong>Self-Learning</strong> (2023 - Present)
                                 <br>Studying programming languages and frameworks, including <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>Laravel</strong>.
                             </li>
-                            <li>
+                            <li data-i18n="workExpList2">
                                 <strong>Personal Projects</strong>
                                 <br>Creating small projects to practice and apply my knowledge, such as simple websites and basic applications.
                             </li>
-                            <li>
+                            <li data-i18n="workExpList3">
                                 <strong>Game Server Development</strong>
                                 <br>Focusing on game server, client, and MMORPG-related projects (MuOnline, WoW, La2).
                             </li>
@@ -85,99 +98,157 @@
                     </div>
                 </div>
             </section>
-
             <!-- Skills section -->
             <section id="skills" class="skills-container">
                 <aside id="skills-programming" class="skills-box">
-                    <h3>Programming Languages</h3>
+                    <h3 data-i18n="skillsProgramming">Programming Languages</h3>
                     <div class="skills-resume">
                         <section>
-                            <h4>Languages</h4>
-                            <ul>
-                                <li><strong>C:</strong> Efficient system-level programming, often used in game server development.</li>
-                                <li><strong>C++:</strong> Object-oriented programming and performance optimization, suitable for game engines and clients.</li>
-                                <li><strong>C#:</strong> Application development with .NET technologies, including game tools and utilities.</li>
-                                <li><strong>PHP:</strong> Server-side scripting and RESTful APIs.</li>
-                                <li><strong>JavaScript:</strong> ES6+, DOM manipulation, and frameworks like ReactJS.</li>
-                                <li><strong>JQuery:</strong> Simplified JavaScript scripting and DOM manipulation.</li>
+                            <h4 data-i18n="skillsProgrammingTitle">Programming Languages</h4>
+                            <ul data-i18n="skillsProgrammingList">
+                                <li>
+                                    <strong>C</strong> — System-level programming, memory management, pointers, and optimization. Used in game server development.
+                                </li>
+                                <li>
+                                    <strong>C++</strong> — OOP, STL, templates, and multi-threading. Suitable for game engines and high-performance applications.
+                                </li>
+                                <li>
+                                    <strong>C#</strong> — .NET development, Windows Forms, WPF, and Unity scripting for tools and utilities.
+                                </li>
+                                <li>
+                                    <strong>PHP</strong> — Backend scripting, RESTful APIs, authentication, and database integration.
+                                </li>
+                                <li>
+                                    <strong>JavaScript</strong> — ES6+, DOM manipulation, asynchronous operations, and frameworks (ReactJS).
+                                </li>
+                                <li>
+                                    <strong>JQuery</strong> — Rapid prototyping, animations, and legacy browser support.
+                                </li>
                             </ul>
+                        </section>
+                        <section>
+                            <h4 data-i18n="skillsSpoken">Spoken Languages</h4>
+                            <ul data-i18n="skillsSpokenList">
+                                <li>
+                                    <strong>Polish</strong> — fluent<br>
+                                    Able to communicate and work on projects with Polish-speaking teams and clients.
+                                </li>
+                                <li>
+                                    <strong>Ukrainian</strong> — fluent (native)<br>
+                                    Native proficiency, suitable for both technical and casual communication.
+                                </li>
+                                <li>
+                                    <strong>Russian</strong> — fluent<br>
+                                    Used daily for both professional and personal communication; preferred for technical discussions.
+                                </li>
+                                <li>
+                                    <strong>English</strong> — upper-intermediate<br>
+                                    Confident in reading, writing, and speaking. Preferred for international communication, documentation, and collaboration.
+                                </li>
+                            </ul>
+                            <p data-i18n="skillsSpokenPref">
+                                <strong>Preferred languages for communication:</strong> English and Russian.<br>
+                                I am comfortable working in multilingual environments and can adapt to teams with diverse language backgrounds.
+                            </p>
                         </section>
                     </div>
                 </aside>
                 <aside id="skills-technologies" class="skills-box">
-                    <h3>Technologies & Databases</h3>
+                    <h3 data-i18n="skillsTechnologies">Technologies & Databases</h3>
                     <div class="skills-resume">
                         <section>
-                            <h4>Frameworks & Tools</h4>
-                            <ul>
-                                <li><strong>Laravel:</strong> Robust back-end framework for scalable applications.</li>
-                                <li><strong>HTML & CSS:</strong> Semantic markup and responsive design.</li>
+                            <h4 data-i18n="skillsFrameworks">Frameworks & Tools</h4>
+                            <ul data-i18n="skillsFrameworksList">
+                                <li>
+                                    <strong>Laravel</strong> — MVC architecture, Eloquent ORM, routing, middleware, RESTful API development.
+                                </li>
+                                <li>
+                                    <strong>HTML & CSS</strong> — Semantic markup, responsive design, Flexbox, Grid, accessibility, cross-browser compatibility.
+                                </li>
                             </ul>
                         </section>
                         <section>
-                            <h4>Databases</h4>
-                            <ul>
-                                <li><strong>MySQL:</strong> Relational database design and optimization, commonly used in game server backends.</li>
-                                <li><strong>MSSQL:</strong> Enterprise-level database solutions, often used in MMORPG server infrastructure.</li>
-                                <li><strong>MongoDB:</strong> NoSQL database for flexible data storage.</li>
+                            <h4 data-i18n="skillsDatabases">Databases</h4>
+                            <ul data-i18n="skillsDatabasesList">
+                                <li>
+                                    <strong>MySQL</strong> — Relational design, complex queries, indexing, normalization.
+                                </li>
+                                <li>
+                                    <strong>MSSQL</strong> — Stored procedures, triggers, performance tuning for enterprise and MMORPG servers.
+                                </li>
+                                <li>
+                                    <strong>MongoDB</strong> — NoSQL, unstructured data, rapid prototyping, scalable solutions.
+                                </li>
                             </ul>
                         </section>
                         <section>
-                            <h4>Game Server Focus</h4>
-                            <ul>
-                                <li>Interested in MMORPG server and client development (MuOnline, WoW, La2).</li>
-                                <li>Experience with configuring, maintaining, and customizing game server environments.</li>
+                            <h4 data-i18n="skillsGameServer">Game Server Focus</h4>
+                            <ul data-i18n="skillsGameServerList">
+                                <li>
+                                    <strong>MMORPG Server & Client Development:</strong><br>
+                                    Interested in and have hands-on experience with server/client architecture for games like MuOnline, WoW, and La2.
+                                </li>
+                                <li>
+                                    <strong>Server Configuration & Maintenance:</strong><br>
+                                    Skilled in setting up, configuring, and maintaining game server environments, including security and performance optimization.
+                                </li>
+                                <li>
+                                    <strong>Customization & Scripting:</strong><br>
+                                    Experience with custom scripts, plugins, and mods to enhance gameplay and server functionality.
+                                </li>
+                                <li>
+                                    <strong>Community & Support:</strong><br>
+                                    Understanding of player needs, community management, and providing technical support for online game projects.
+                                </li>
                             </ul>
                         </section>
                     </div>
                 </aside>
             </section>
-
             <!-- Projects section -->
             <section id="projects" class="projects-section">
-                <h2>My Projects</h2>
+                <h2 data-i18n="myProjects">My Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card placeholder-card" data-project="1">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                     <div class="project-card placeholder-card" data-project="2">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                     <div class="project-card placeholder-card" data-project="3">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                     <div class="project-card placeholder-card" data-project="4">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                     <div class="project-card placeholder-card" data-project="5">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                     <div class="project-card placeholder-card" data-project="6">
                         <div class="project-image" style="background-color: #ffffff;"></div>
-                        <h3>Project Coming Soon</h3>
-                        <p>Details about this project will be added soon. Stay tuned!</p>
+                        <h3 data-i18n="projectSoon">Project Coming Soon</h3>
+                        <p data-i18n="projectSoonDetails">Details about this project will be added soon. Stay tuned!</p>
                     </div>
                 </div>
             </section>
-
             <!-- Reviews section -->
             <section id="reviews" class="reviews-section">
-                <h2>What People Say</h2>
+                <h2 data-i18n="whatPeopleSay">What People Say</h2>
                 <div class="reviews-grid">
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Great developer! Looking forward to seeing more of your MMORPG work.</span>
+                            <span class="review-quote" data-i18n="review1">Great developer! Looking forward to seeing more of your MMORPG work.</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -188,7 +259,7 @@
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Very passionate about game servers. Highly recommended!</span>
+                            <span class="review-quote" data-i18n="review2">Very passionate about game servers. Highly recommended!</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -199,7 +270,7 @@
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Knows a lot about MuOnline and server configs. Good luck!</span>
+                            <span class="review-quote" data-i18n="review3">Knows a lot about MuOnline and server configs. Good luck!</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -210,7 +281,7 @@
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Impressed by your dedication to learning and gaming projects.</span>
+                            <span class="review-quote" data-i18n="review4">Impressed by your dedication to learning and gaming projects.</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -221,7 +292,7 @@
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Great skills in both backend and game server development!</span>
+                            <span class="review-quote" data-i18n="review5">Great skills in both backend and game server development!</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -232,7 +303,7 @@
                     <div class="review-card placeholder-review">
                         <div class="review-avatar"></div>
                         <div class="review-content">
-                            <span class="review-quote">Looking forward to your future MMORPG projects!</span>
+                            <span class="review-quote" data-i18n="review6">Looking forward to your future MMORPG projects!</span>
                         </div>
                         <div class="reviewer-block">
                             <span class="review-name">
@@ -242,19 +313,17 @@
                     </div>
                 </div>
             </section>
-
             <!-- Contact form -->
             <section id="contact" class="flex-container">
                 <section class="info-box">
-                    <h3>Contact Me</h3>
-                    <p>Have a project in mind or just want to say hi? Feel free to reach out!</p>
-                    <a href="mailto:dmytro.hovenko@gmail.com" class="info-button">Email Me</a>
+                    <h3 data-i18n="contactMe">Contact Me</h3>
+                    <p data-i18n="contactMsg">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                    <a href="mailto:dmytro.hovenko@gmail.com" class="info-button" data-i18n="emailMe">Email Me</a>
                 </section>
-
                 <section class="info-box">
-                    <h3>Download My Resume</h3>
-                    <p>Get a detailed overview of my skills, experience, and projects.</p>
-                    <a href="resume.pdf" target="_blank" class="info-button">Download Resume</a>
+                    <h3 data-i18n="downloadResume">Download My Resume</h3>
+                    <p data-i18n="resumeText">Get a detailed overview of my skills, experience, and projects.</p>
+                    <a href="resume.pdf" target="_blank" class="info-button" data-i18n="downloadResumeBtn">Download Resume</a>
                 </section>
             </section>
         </main>
@@ -262,11 +331,11 @@
         <!-- Footer section -->
         <footer class="footer">
             <ul class="footer-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contacts</a></li>
+                <li><a href="#about" data-i18n="about">About Me</a></li>
+                <li><a href="#skills" data-i18n="skills">Skills</a></li>
+                <li><a href="#projects" data-i18n="projects">Projects</a></li>
+                <li><a href="#reviews" data-i18n="reviews">Reviews</a></li>
+                <li><a href="#contact" data-i18n="contacts">Contacts</a></li>
             </ul>
             <div class="social-media">
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook">
@@ -294,25 +363,25 @@
             </div>
             <div class="project-popup-info">
                 <span class="close-popup" id="closePopup">&times;</span>
-                <h2 id="popupTitle">Project Title</h2>
+                <h2 id="popupTitle" data-i18n="projectSoon">Project Title</h2>
                 <div id="popupDetails">
-                    <p>Project details will appear here.</p>
+                    <p data-i18n="projectSoonDetails">Project details will appear here.</p>
                     <ul class="project-meta">
                         <li><strong>Genre:</strong> <span id="popupGenre">Coming soon</span></li>
                         <li><strong>Short Info:</strong> <span id="popupShort">Coming soon</span></li>
                     </ul>
                 </div>
                 <form id="commentForm">
-                    <h3>Leave a Comment</h3>
-                    <textarea id="commentText" placeholder="Your comment..." required></textarea>
-                    <button type="submit" class="info-button">Submit</button>
+                    <h3 data-i18n="leaveComment">Leave a Comment</h3>
+                    <textarea id="commentText" data-i18n="leaveComment" placeholder="Your comment..." required></textarea>
+                    <button type="submit" class="info-button" data-i18n="submit">Submit</button>
                 </form>
                 <div id="commentsSection">
-                    <h4>Comments</h4>
+                    <h4 data-i18n="comments">Comments</h4>
                     <ul id="commentsList">
                         <!-- No comments yet. -->
                     </ul>
-                    <div id="noCommentsMsg" style="color:#888; font-size:15px; margin-top:6px; display:none;">No comments yet.</div>
+                    <div id="noCommentsMsg" data-i18n="noComments" style="color:#888; font-size:15px; margin-top:6px; display:none;">No comments yet.</div>
                 </div>
             </div>
         </div>
@@ -328,5 +397,6 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="lang.js"></script>
 </body>
 </html>
