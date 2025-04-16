@@ -10,6 +10,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
 :root {
     --bg-color: #1e1e1e;
     --text-color: #f0f0f0;
@@ -634,15 +639,33 @@ a[href$="index.htm"] {
     margin-top: 20px;
 }
 
-social-media a img {
+.social-media a {
+    display: inline-block;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+    background-color: #388e3c;
+}
+
+.social-media a img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-social-media a img:hover {
+.social-media a:hover img {
     transform: scale(1.2);
-    filter: brightness(1.2);
+    filter: brightness(1.5);
 }
 
 /* Footer */
@@ -694,4 +717,69 @@ section.hidden {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    p, ul li {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .projects-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-box {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
