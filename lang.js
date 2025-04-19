@@ -14,7 +14,7 @@ const translations = {
         welcomeSub: "FullStack Developer<br> Specializing in Modern Web and Software Solutions",
         workExp: "Work Experience",
         aboutText1: "I'm <strong>Dmytro Hovenko</strong>, an aspiring <strong>FullStack Developer</strong> currently learning the fundamentals of web development and programming. I am passionate about technology and eager to build a strong foundation in both front-end and back-end development.",
-        aboutText2: "My learning journey includes <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong>, and <strong>MongoDB</strong>. I am committed to continuous improvement and excited to apply my knowledge to real-world projects in the future.",
+        aboutText2: "My learning journey includes <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong>, and <strong>MongoDB</strong>. I am committed to continuous improvement and excited to apply my knowledge to real-world projects in the future.",
         aboutText3: "<strong>My main focus is working exclusively with game servers, clients, and related projects.</strong> I am especially passionate about MMORPGs such as <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong>, and <strong>Lineage 2 (La2)</strong>. My goal is to contribute to the gaming industry and develop solutions for online game communities.",
         workExpText1: "As someone just starting out, I am focused on learning and building my skills. While I don't have professional experience yet, I am actively working on personal projects and exploring various technologies to gain hands-on experience.",
         workExpList1: "<strong>Self-Learning</strong> (2023 - Present)<br>Studying programming languages and frameworks, including <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>Laravel</strong>.",
@@ -24,7 +24,6 @@ const translations = {
         skillsProgrammingTitle: "Programming Languages",
         skillsProgrammingList: `<strong>C</strong> — System-level programming, memory management, pointers, and optimization. Used in game server development.
 <strong>C++</strong> — OOP, STL, templates, and multi-threading. Suitable for game engines and high-performance applications.
-<strong>C#</strong> — .NET development, Windows Forms, WPF, and Unity scripting for tools and utilities.
 <strong>PHP</strong> — Backend scripting, RESTful APIs, authentication, and database integration.
 <strong>JavaScript</strong> — ES6+, DOM manipulation, asynchronous operations, and frameworks (ReactJS).
 <strong>JQuery</strong> — Rapid prototyping, animations, and legacy browser support.`,
@@ -79,7 +78,7 @@ const translations = {
         welcomeSub: "FullStack разработчик<br> Специализация — современные веб- и софт-решения",
         workExp: "Опыт работы",
         aboutText1: "Я <strong>Дмитрий Говенко</strong>, начинающий <strong>FullStack разработчик</strong>, изучающий основы веб-разработки и программирования. Я увлечён технологиями и стремлюсь построить прочную базу как во фронтенде, так и в бэкенде.",
-        aboutText2: "В процессе обучения я изучаю <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> и <strong>MongoDB</strong>. Я нацелен на постоянное развитие и с нетерпением жду возможности применить знания на реальных проектах.",
+        aboutText2: "В процессе обучения я изучаю <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> и <strong>MongoDB</strong>. Я нацелен на постоянное развитие и с нетерпением жду возможности применить знания на реальных проектах.",
         aboutText3: "<strong>Мой основной фокус — работа исключительно с игровыми серверами, клиентами и смежными проектами.</strong> Особенно интересуюсь MMORPG, такими как <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong> и <strong>Lineage 2 (La2)</strong>. Моя цель — внести вклад в игровую индустрию и разрабатывать решения для онлайн-сообществ.",
         workExpText1: "Как новичок, я сосредоточен на обучении и развитии навыков. У меня пока нет профессионального опыта, но я активно работаю над личными проектами и осваиваю разные технологии на практике.",
         workExpList1: "<strong>Самообразование</strong> (2023 - настоящее время)<br>Изучаю языки программирования и фреймворки: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Laravel</strong>.",
@@ -89,7 +88,6 @@ const translations = {
         skillsProgrammingTitle: "Языки программирования",
         skillsProgrammingList: `<strong>C</strong> — Системное программирование, управление памятью, указатели, оптимизация. Используется для игровых серверов.
 <strong>C++</strong> — ООП, STL, шаблоны, многопоточность. Подходит для игровых движков и высокопроизводительных приложений.
-<strong>C#</strong> — .NET, Windows Forms, WPF, скрипты для Unity.
 <strong>PHP</strong> — Бэкенд-скрипты, REST API, аутентификация, работа с БД.
 <strong>JavaScript</strong> — ES6+, работа с DOM, асинхронность, фреймворки (ReactJS).
 <strong>JQuery</strong> — Быстрое прототипирование, анимации, поддержка старых браузеров.`,
@@ -144,7 +142,7 @@ const translations = {
         welcomeSub: "FullStack Developer<br> Specjalizuję się w nowoczesnych rozwiązaniach webowych i programistycznych",
         workExp: "Doświadczenie zawodowe",
         aboutText1: "Jestem <strong>Dmytro Hovenko</strong>, początkujący <strong>FullStack Developer</strong>, uczę się podstaw web developmentu i programowania. Pasjonuję się technologią i chcę zbudować solidne podstawy zarówno w front-endzie, jak i back-endzie.",
-        aboutText2: "Moja nauka obejmuje <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> i <strong>MongoDB</strong>. Stawiam na ciągły rozwój i chcę wykorzystać wiedzę w praktycznych projektach.",
+        aboutText2: "Moja nauka obejmuje <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> i <strong>MongoDB</strong>. Stawiam na ciągły rozwój i chcę wykorzystać wiedzę w praktycznych projektach.",
         aboutText3: "<strong>Mój główny cel to praca wyłącznie z serwerami gier, klientami i powiązanymi projektami.</strong> Szczególnie interesują mnie MMORPG, takie jak <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong> i <strong>Lineage 2 (La2)</strong>. Chcę wspierać branżę gier i rozwijać rozwiązania dla społeczności online.",
         workExpText1: "Jako początkujący skupiam się na nauce i rozwoju umiejętności. Nie mam jeszcze doświadczenia zawodowego, ale realizuję własne projekty i poznaję nowe technologie w praktyce.",
         workExpList1: "<strong>Samodzielna nauka</strong> (2023 - obecnie)<br>Poznawanie języków programowania i frameworków: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Laravel</strong>.",
@@ -154,7 +152,6 @@ const translations = {
         skillsProgrammingTitle: "Języki programowania",
         skillsProgrammingList: `<strong>C</strong> — Programowanie systemowe, zarządzanie pamięcią, wskaźniki, optymalizacja. Używane w serwerach gier.
 <strong>C++</strong> — OOP, STL, szablony, wielowątkowość. Do silników gier i wydajnych aplikacji.
-<strong>C#</strong> — .NET, Windows Forms, WPF, skrypty Unity.
 <strong>PHP</strong> — Backend, REST API, uwierzytelnianie, integracja z bazami danych.
 <strong>JavaScript</strong> — ES6+, manipulacja DOM, asynchroniczność, frameworki (ReactJS).
 <strong>JQuery</strong> — Szybkie prototypowanie, animacje, wsparcie starszych przeglądarek.`,
@@ -209,7 +206,7 @@ const translations = {
         welcomeSub: "FullStack розробник<br> Спеціалізуюся на сучасних веб- та програмних рішеннях",
         workExp: "Досвід роботи",
         aboutText1: "Я <strong>Дмитро Говенко</strong>, початківець <strong>FullStack розробник</strong>, який вивчає основи веб-розробки та програмування. Я захоплююся технологіями й прагну закласти міцний фундамент у фронтенді та бекенді.",
-        aboutText2: "У процесі навчання опановую <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> і <strong>MongoDB</strong>. Постійно вдосконалююся й хочу застосувати знання на реальних проєктах.",
+        aboutText2: "У процесі навчання опановую <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>JQuery</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>MySQL</strong>, <strong>MSSQL</strong> і <strong>MongoDB</strong>. Постійно вдосконалююся й хочу застосувати знання на реальних проєктах.",
         aboutText3: "<strong>Мій основний фокус — робота виключно з ігровими серверами, клієнтами та суміжними проєктами.</strong> Особливо цікавлюся MMORPG, такими як <strong>MuOnline</strong>, <strong>World of Warcraft (WoW)</strong> і <strong>Lineage 2 (La2)</strong>. Мета — зробити внесок у гейм-індустрію та створювати рішення для онлайн-спільнот.",
         workExpText1: "Як новачок, я зосереджений на навчанні та розвитку навичок. Професійного досвіду ще не маю, але активно працюю над власними проєктами й вивчаю різні технології на практиці.",
         workExpList1: "<strong>Самоосвіта</strong> (2023 - дотепер)<br>Вивчаю мови програмування та фреймворки: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Laravel</strong>.",
@@ -219,7 +216,7 @@ const translations = {
         skillsProgrammingTitle: "Мови програмування",
         skillsProgrammingList: `<strong>C</strong> — Системне програмування, керування пам'яттю, вказівники, оптимізація. Використовується для ігрових серверів.
 <strong>C++</strong> — ООП, STL, шаблони, багатопотоковість. Для ігрових рушіїв і високопродуктивних застосунків.
-<strong>C#</strong> — .NET, Windows Forms, WPF, скрипти для Unity.
+
 <strong>PHP</strong> — Бекенд-скрипти, REST API, автентифікація, робота з БД.
 <strong>JavaScript</strong> — ES6+, робота з DOM, асинхронність, фреймворки (ReactJS).
 <strong>JQuery</strong> — Швидке прототипування, анімації, підтримка старих браузерів.`,
